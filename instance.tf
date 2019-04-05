@@ -48,3 +48,12 @@ resource "aws_dynamodb_table" "dynamodb-terraform-state-lock" {
     Name = "DynamoDB Terraform State Lock Table"
   }
 }
+terraform {
+ backend “s3” {
+ encrypt = true
+ bucket = "terraform-remote-state-storage-s3"
+ dynamodb_table = "terraform-state-lock-dynamo"
+ region = us-west-2
+ key = terraform
+ }
+}
