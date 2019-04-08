@@ -7,7 +7,7 @@ resource "aws_instance" "frontend" {
   instance_type = "t2.micro"
   key_name = "awskey"
   tags = {
-    Name = "moun-test-front"
+    Name = "webserver"
   }
 }
 resource "aws_instance" "bdd" {
@@ -15,6 +15,6 @@ resource "aws_instance" "bdd" {
   instance_type = "t2.micro"
   key_name = "awskey"
   tags = {
-    Name = "moun-test-bdd"
+    Name = "dbserver"
   }
 }
